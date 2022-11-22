@@ -22,24 +22,24 @@ function Header() {
         />
         <div className='header__input'>
           <SearchIcon />
-          <input type='text' />
+          <input type='text' placeholder='Search' />
         </div>
       </div>
       <div className='header__center'>
-        <div className='header__option'>
-          <HomeIcon fontSize='large' />
+        <div className='header__option header__option--active'>
+          <HomeIcon fontSize='medium' />
         </div>
         <div className='header__option'>
-          <FlagIcon fontSize='large' />
+          <FlagIcon fontSize='medium' />
         </div>
         <div className='header__option'>
-          <SubscriptionsIcon fontSize='large' />
+          <SubscriptionsIcon fontSize='medium' />
         </div>
         <div className='header__option'>
-          <StorefrontIcon fontSize='large' />
+          <StorefrontIcon fontSize='medium' />
         </div>
         <div className='header__option'>
-          <SupervisedUserCircleIcon fontSize='large' />
+          <SupervisedUserCircleIcon fontSize='medium' />
         </div>
       </div>
 
@@ -50,16 +50,16 @@ function Header() {
         </div>
 
         <IconButton>
-          <AddIcon />
+          <AddIcon fontSize='small' />
         </IconButton>
         <IconButton>
-          <ForumIcon />
+          <ForumIcon fontSize='small' />
         </IconButton>
         <IconButton>
-          <NotificationsActiveIcon />
+          <NotificationsActiveIcon fontSize='small' />
         </IconButton>
         <IconButton>
-          <ExpandMoreIcon />
+          <ExpandMoreIcon fontSize='small' />
         </IconButton>
       </div>
     </div>
