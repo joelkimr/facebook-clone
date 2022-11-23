@@ -16,8 +16,8 @@ function MessageSender() {
         <Avatar />
         <form>
           <input
-            classNam='messageSender__input'
-            placeholder={`what's on your mind`}
+            className='messageSender__input'
+            placeholder={`what's on your mind?`}
           />
 
           <input placeholder='image URL Optinal' />
