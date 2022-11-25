@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Header.css";
 import SearchIcon from "@mui/icons-material/Search";
 import HomeIcon from "@mui/icons-material/Home";
@@ -13,6 +13,14 @@ import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 function Header() {
+  const [Active, setActive] = useState("");
+
+  const HandleSearch = (e) => {
+    e.prevendefault();
+
+    setActive("");
+  };
+
   return (
     <div className='header'>
       <div className='header__left'>
@@ -21,8 +29,18 @@ function Header() {
           alt='facebook_logo'
         />
         <div className='header__input'>
-          <SearchIcon />
-          <input type='text' placeholder='Search Facebook' />
+          <form>
+            <SearchIcon />
+            <input
+              value={Active}
+              onChange={(e) => setActive(e.target.value)}
+              type='text'
+              placeholder='Search Facebook'
+            />
+            <button onClick={HandleSearch} type='submit'>
+              Hidden submit
+            </button>
+          </form>
         </div>
       </div>
       <div className='header__center'>
