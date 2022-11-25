@@ -1,4 +1,6 @@
 .storyReel {
     display: flex;
-    margin: 20px 80px;
+    margin: 0px 20px;
+    margin-bottom: 30px;
+    gap: 9px;
 }
