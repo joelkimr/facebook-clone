@@ -8,14 +8,14 @@ import StorefrontIcon from "@mui/icons-material/Storefront";
 import ForumIcon from "@mui/icons-material/Forum";
 import LocalHospitalIcon from "@mui/icons-material/LocalHospital";
 import VideoLibraryIcon from "@mui/icons-material/VideoLibrary";
+import { useStateValue } from "../../../StateProvider";
 
 function Sidebar() {
+  const [{ user }, dispatch] = useStateValue();
+
   return (
     <div className='sidebar'>
-      <SidebarRow
-        src='https://avatars2.githubusercontent.com/u/24712956?s=400&u=b71527e605ae1b748fc2d4157a842e57ead44&v=4'
-        title='ccccna'
-      />
+      <SidebarRow src={user.photoURL} title={user.displayName} />
       <SidebarRow Icon={LocalHospitalIcon} title='FEVER Information Center' />
       <SidebarRow Icon={FlagIcon} title='Pages' />
       <SidebarRow Icon={SupervisedUserCircleIcon} title='Friends' />
