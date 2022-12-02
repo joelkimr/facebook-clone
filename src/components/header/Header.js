@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import "./Header.css";
 import SearchIcon from "@mui/icons-material/Search";
 import HomeIcon from "@mui/icons-material/Home";
@@ -11,15 +10,10 @@ import AddIcon from "@mui/icons-material/Add";
 import ForumIcon from "@mui/icons-material/Forum";
 import NotificationsActiveIcon from "@mui/icons-material/NotificationsActive";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { useStateValue } from "../../StateProvider";
 
 function Header() {
-  const [Active, setActive] = useState("");
-
-  const HandleSearch = (e) => {
-    e.prevendefault();
-
-    setActive("");
-  };
+  const [{ user }, dispatch] = useStateValue();
 
   return (
     <div className='header'>
@@ -31,15 +25,7 @@ function Header() {
         <div className='header__input'>
           <form>
             <SearchIcon />
-            <input
-              value={Active}
-              onChange={(e) => setActive(e.target.value)}
-              type='text'
-              placeholder='Search Facebook'
-            />
-            <button onClick={HandleSearch} type='submit'>
-              Hidden submit
-            </button>
+            <input type='text' placeholder='Search Facebook' />
           </form>
         </div>
       </div>
@@ -63,8 +49,8 @@ function Header() {
 
       <div className='header__right'>
         <div className='header__info'>
-          <Avatar />
-          <h4>ccccena</h4>
+          <Avatar src={user.photoURL} />
+          <h4>{user.displayName}</h4>
         </div>
 
         <IconButton>
