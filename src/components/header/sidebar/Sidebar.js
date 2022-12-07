@@ -11,7 +11,7 @@ import VideoLibraryIcon from "@mui/icons-material/VideoLibrary";
 import { useStateValue } from "../../../StateProvider";
 
 function Sidebar() {
-  const [{ user }, dispatch] = useStateValue();
+  const [{ user }] = useStateValue();
 
   return (
     <div className='sidebar'>
