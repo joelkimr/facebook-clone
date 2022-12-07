@@ -55,6 +55,7 @@
     display: flex;
     align-items: center;
     align-content: center;
+    justify-content: center;
     padding: 5px;
     flex: 1;
 }

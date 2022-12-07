@@ -14,13 +14,13 @@ function Feed() {
       .onSnapshot((snapshot) =>
         setPosts(snapshot.docs.map((doc) => ({ id: doc.id, data: doc.data() })))
       );
-  }, []);
+  }, [posts]);
 
   return (
     <div className='feed'>
       <StoryReel />
       <MessageSender />
-      {posts.map((post) => {
+      {posts.map((post) => (
         <Post
           key={post.id}
           profilePic={post.data.profilePic}
@@ -28,8 +28,8 @@ function Feed() {
           timestamp={post.data.timestamp}
           username={post.data.username}
           image={post.data.image}
-        />;
-      })}
+        />
+      ))}
     </div>
   );
 }
