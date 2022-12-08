@@ -13,7 +13,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useStateValue } from "../../StateProvider";
 
 function Header() {
-  const [{ user }, dispatch] = useStateValue();
+  const [{ user }] = useStateValue();
 
   return (
     <div className='header'>
